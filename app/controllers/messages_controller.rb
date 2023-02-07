@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.user = current_user
     if @message.save 
-      redirect_to root_path
+      ActionCable.server.broadcast("chatroom_channel", { username: current_user.username, body: @message.body })
     end
   end
 

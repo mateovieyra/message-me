@@ -6,3 +6,7 @@
   background: #fd7e14;
   color: black;
 }
+
+.chat-messages {
+  overflow-y: scroll;
+}
