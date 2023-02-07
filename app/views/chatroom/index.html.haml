@@ -13,9 +13,9 @@
       .card-body
         = render @messages
       .card-footer.bg-transparent 
-        %form 
+        = form_for(:message, url: messages_path) do |f| 
           .input-group 
-            %input.form-control(type="text")
+            = f.text_field :body, class: "form-control"
             %span.input-group-text.edit-button 
               %i.bi.bi-pencil-square.edit-button
   .col-12.col-md-3 

@@ -15,11 +15,11 @@
   .col-12.col-md-4 
     .card.p-3.shadow
       .card-body 
-        %form 
+        = form_for(:session, url: login_path) do |f| 
           .mb-3 
-            %label.form-label(for="inputUsername") Username 
-            %input.form-control.shadow-sm#inputUsername(type="text")
+            = f.label :username, class: "form-label", for:"inputUsername"  
+            = f.text_field :username, class: "form-control shadow-sm", id: "inputUsername"
           .mb-3 
-            %label.form-label(for="password") Password 
-            %input.form-control.shadow-sm#inputPassword(type="password")
-          %button.btn.btn-primary.mb-3 Login
+            = f.label :password, class: "form-label", for:"inputPassword"  
+            = f.password_field :password, class: "form-control shadow-sm", id: "inputPassword"
+          = f.button "Login", class: "btn btn-primary mb-3"
