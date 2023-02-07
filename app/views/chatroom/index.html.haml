@@ -11,9 +11,7 @@
   .col-12.col-md-9 
     .card.chatbox
       .card-body
-        %p 
-          %em Name: 
-          Test message
+        = render @messages
       .card-footer.bg-transparent 
         %form 
           .input-group 
